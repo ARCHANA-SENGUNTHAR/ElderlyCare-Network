@@ -1,0 +1,276 @@
+// import React, { useState } from "react";
+// import {
+//   View,
+//   Text,
+//   TextInput,
+//   TouchableOpacity,
+//   StyleSheet,
+//   Alert,
+// } from "react-native";
+// import AsyncStorage from "@react-native-async-storage/async-storage";
+// import api from "../../utils/api";
+// import { useNavigation } from "@react-navigation/native";
+
+// const ChangePasswordScreen = () => {
+//   const navigation = useNavigation();
+
+//   const [oldPassword, setOldPassword] = useState("");
+//   const [newPassword, setNewPassword] = useState("");
+
+//   const handleChangePassword = async () => {
+//     if (!oldPassword || !newPassword) {
+//       Alert.alert("Error", "Please fill all fields");
+//       return;
+//     }
+
+//     try {
+//       const token = await AsyncStorage.getItem("token");
+
+//       await api.put(
+//         "/auth/change-password",
+//         { oldPassword, newPassword },
+//         { headers: { Authorization: `Bearer ${token}` } }
+//       );
+
+//       Alert.alert("Success", "Password updated successfully");
+//       navigation.goBack();
+
+//     } catch (error: any) {
+//       Alert.alert(
+//         "Failed",
+//         error.response?.data?.message || "Something went wrong"
+//       );
+//     }
+//   };
+
+//   return (
+//     <View style={styles.container}>
+//       <Text style={styles.title}>Change Password</Text>
+
+//       <TextInput
+//         style={styles.input}
+//         placeholder="Old Password"
+//         secureTextEntry
+//         value={oldPassword}
+//         onChangeText={setOldPassword}
+//       />
+
+//       <TextInput
+//         style={styles.input}
+//         placeholder="New Password"
+//         secureTextEntry
+//         value={newPassword}
+//         onChangeText={setNewPassword}
+//       />
+
+//       <TouchableOpacity style={styles.button} onPress={handleChangePassword}>
+//         <Text style={styles.buttonText}>Update Password</Text>
+//       </TouchableOpacity>
+//     </View>
+//   );
+// };
+
+// export default ChangePasswordScreen;
+
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     padding: 20,
+//     backgroundColor: "#F3F4F6",
+//   },
+//   title: {
+//     fontSize: 24,
+//     fontWeight: "bold",
+//     marginBottom: 20,
+//   },
+//   input: {
+//     backgroundColor: "#fff",
+//     borderRadius: 10,
+//     padding: 14,
+//     marginBottom: 15,
+//   },
+//   button: {
+//     backgroundColor: "#4CAF50",
+//     padding: 14,
+//     borderRadius: 10,
+//     alignItems: "center",
+//   },
+//   buttonText: {
+//     color: "#fff",
+//     fontWeight: "bold",
+//   },
+// });
+
+
+
+import React, { useState } from "react";
+import {
+  View,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  StyleSheet,
+  Alert,
+} from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import api from "../../utils/api";
+import { useNavigation } from "@react-navigation/native";
+
+const ChangePasswordScreen = () => {
+  const navigation = useNavigation();
+
+  const [oldPassword, setOldPassword] = useState("");
+  const [newPassword, setNewPassword] = useState("");
+  const [showOld, setShowOld] = useState(false);
+  const [showNew, setShowNew] = useState(false);
+
+  const handleChangePassword = async () => {
+    if (!oldPassword || !newPassword) {
+      Alert.alert("Error", "Please fill all fields");
+      return;
+    }
+
+    try {
+      const token = await AsyncStorage.getItem("token");
+
+      await api.put(
+        "/auth/change-password",
+        { oldPassword, newPassword },
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+
+      Alert.alert("Success", "Password updated successfully");
+      navigation.goBack();
+    } catch (error: any) {
+      Alert.alert(
+        "Failed",
+        error.response?.data?.message || "Something went wrong"
+      );
+    }
+  };
+
+  return (
+    <View style={styles.container}>
+      {/* ================= HEADER ================= */}
+      <Text style={styles.title}>Change Password</Text>
+      <Text style={styles.subtitle}>
+        Make sure your new password is strong
+      </Text>
+
+      {/* ================= CARD ================= */}
+      <View style={styles.card}>
+        {/* OLD PASSWORD */}
+        <View style={styles.inputContainer}>
+          <Text style={styles.icon}>🔒</Text>
+          <TextInput
+            style={styles.input}
+            placeholder="Old Password"
+            secureTextEntry={!showOld}
+            value={oldPassword}
+            onChangeText={setOldPassword}
+          />
+          <TouchableOpacity onPress={() => setShowOld(!showOld)}>
+            <Text style={styles.eye}>{showOld ? "🙈" : "👁️"}</Text>
+          </TouchableOpacity>
+        </View>
+
+        {/* NEW PASSWORD */}
+        <View style={styles.inputContainer}>
+          <Text style={styles.icon}>🔑</Text>
+          <TextInput
+            style={styles.input}
+            placeholder="New Password"
+            secureTextEntry={!showNew}
+            value={newPassword}
+            onChangeText={setNewPassword}
+          />
+          <TouchableOpacity onPress={() => setShowNew(!showNew)}>
+            <Text style={styles.eye}>{showNew ? "🙈" : "👁️"}</Text>
+          </TouchableOpacity>
+        </View>
+
+        {/* BUTTON */}
+        <TouchableOpacity
+          style={styles.button}
+          onPress={handleChangePassword}
+          activeOpacity={0.8}
+        >
+          <Text style={styles.buttonText}>Update Password</Text>
+        </TouchableOpacity>
+      </View>
+    </View>
+  );
+};
+
+export default ChangePasswordScreen;
+
+/* ================= STYLES ================= */
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#F3F4F6",
+    padding: 20,
+    justifyContent: "center",
+  },
+
+  title: {
+    fontSize: 26,
+    fontWeight: "bold",
+    color: "#111827",
+    textAlign: "center",
+  },
+
+  subtitle: {
+    fontSize: 14,
+    color: "#6B7280",
+    textAlign: "center",
+    marginBottom: 25,
+  },
+
+  card: {
+    backgroundColor: "#FFFFFF",
+    borderRadius: 18,
+    padding: 20,
+    elevation: 6,
+  },
+
+  inputContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "#F9FAFB",
+    borderRadius: 12,
+    paddingHorizontal: 12,
+    marginBottom: 16,
+  },
+
+  icon: {
+    fontSize: 20,
+    marginRight: 8,
+  },
+
+  input: {
+    flex: 1,
+    paddingVertical: 14,
+    fontSize: 16,
+    color: "#111827",
+  },
+
+  eye: {
+    fontSize: 18,
+    padding: 6,
+  },
+
+  button: {
+    backgroundColor: "#25D366",
+    paddingVertical: 16,
+    borderRadius: 14,
+    alignItems: "center",
+    marginTop: 10,
+  },
+
+  buttonText: {
+    color: "#FFFFFF",
+    fontSize: 16,
+    fontWeight: "bold",
+  },
+});

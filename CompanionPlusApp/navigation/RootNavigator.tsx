@@ -312,6 +312,7 @@ import CaregiverHomeScreen from '../screens/caregiver/CaregiverHomeScreen';
 import CaregiverNotificationsScreen from '../screens/caregiver/CaregiverNotificationsScreen';
 
 import ElderNotificationsScreen from '../screens/notifications/ElderNotificationsScreen';
+import ChangePasswordScreen from '../screens/settings/ChangePasswordScreen';
 // Correct path based on your structure
 
 // Define the RootStackParamList for type safety
@@ -362,6 +363,7 @@ EditRelationProfileScreen:undefined;
 
   ElderNotifications: undefined;
   AuthLoading : undefined;
+  ChangePassword: undefined;
   
   
   // Add other screens here if necessary
@@ -497,6 +499,10 @@ const RootNavigator: React.FC = () => {
 <Stack.Screen
   name="ElderNotifications"
   component={ElderNotificationsScreen}
+/>
+<Stack.Screen
+  name="ChangePassword"
+  component={ChangePasswordScreen}
 />
 
 

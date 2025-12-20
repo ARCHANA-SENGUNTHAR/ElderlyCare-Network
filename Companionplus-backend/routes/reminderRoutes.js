@@ -1,9 +1,17 @@
-// routes/reminderRoutes.js
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const reminderController = require('../controllers/reminderController');
+const auth = require("../middleware/authMiddleware");
 
-// Use a specific function from the controller
-router.post('/add', reminderController.addReminder);
+const {
+  createReminder,
+  getReminders,
+  updateReminder,
+  deleteReminder,
+} = require("../controllers/reminderController");
+
+router.post("/", auth, createReminder);
+router.get("/", auth, getReminders);
+router.put("/:id", auth, updateReminder);
+router.delete("/:id", auth, deleteReminder);
 
 module.exports = router;

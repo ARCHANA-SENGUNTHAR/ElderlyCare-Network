@@ -423,18 +423,19 @@ const menuItems = [
   { label: 'Chat List', route: 'ChatListScreen' },
   { label: 'Help', route: 'HelpScreen' },
   { label: 'Settings', route: 'SettingsScreen' },
-  { label: 'Book Consultation', route: 'BookConsultationScreen' },
-  { label: 'Doctor List', route: 'DoctorListScreen' },
-  { label: 'My Appointments', route: 'MyAppointmentsScreen' },
-  { label: 'Linked Elders', route: 'LinkedEldersScreen' },
-  { label: 'Relation Dashboard', route: 'RelationDashboardScreen' },
+  { label: 'Notifications', route: 'ElderNotifications' },
+  //{ label: 'Book Consultation', route: 'BookConsultationScreen' },
+  //{ label: 'Doctor List', route: 'DoctorListScreen' },
+  //{ label: 'My Appointments', route: 'MyAppointmentsScreen' },
+  //{ label: 'Linked Elders', route: 'LinkedEldersScreen' },
+  //{ label: 'Relation Dashboard', route: 'RelationDashboardScreen' },
   { label: 'Add Reminder', route: 'AddReminderScreen' },
   { label: 'Reminders List', route: 'RemindersListScreen' },
-  { label: 'Booking History', route: 'BookingHistoryScreen' },
-  { label: 'Transport', route: 'TransportRequestScreen' },
+  //{ label: 'Booking History', route: 'BookingHistoryScreen' },
+  //{ label: 'Transport', route: 'TransportRequestScreen' },
   { label: 'Resources', route: 'ResourceDetailsScreen' },
   { label: 'Wellness', route: 'WellnessResourcesScreen' },
-  { label: 'Notifications', route: 'ElderNotifications' },
+  
 ];
 
 const ElderHomeScreen = () => {

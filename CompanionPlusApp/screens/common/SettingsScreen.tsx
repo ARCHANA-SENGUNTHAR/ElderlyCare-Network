@@ -120,7 +120,7 @@
 
 
 
-import React from "react";
+
 import {
   View,
   Text,
@@ -130,36 +130,63 @@ import {
   Image,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import React, { useEffect, useState } from "react";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import api from "../../utils/api";
+import { CommonActions } from "@react-navigation/native";
+import { removeToken } from '../../utils/storage';
 
 const SettingsScreen: React.FC = () => {
   const navigation = useNavigation();
+const [user, setUser] = useState({ name: "", email: "" });
 
-  const handleLogout = () => {
-    Alert.alert(
-      "Logout",
-      "Are you sure you want to logout?",
-      [
-        { text: "Cancel", style: "cancel" },
-        {
-          text: "Logout",
-          style: "destructive",
-          onPress: () => navigation.navigate("LoginAsElder" as never),
-        },
-      ]
-    );
+useEffect(() => {
+  const loadUser = async () => {
+    try {
+      const token = await AsyncStorage.getItem("token");
+
+      const res = await api.get("/elder/me", {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+
+      setUser({
+        name: res.data.name,
+        email: res.data.email,
+      });
+
+    } catch (error) {
+      console.log("User load error:", error);
+    }
   };
+
+  loadUser();
+}, []);
+
+
+
+ const handleLogout = async () => {
+   await removeToken();
+   navigation.reset({
+     index: 0,
+     routes: [{ name: 'RoleSelection' as never }],
+   });
+ };
+
 
   return (
     <View style={styles.container}>
       {/* ================= PROFILE HEADER ================= */}
       <View style={styles.profileCard}>
         <View style={styles.avatar}>
-          <Text style={styles.avatarText}>A</Text>
+          <Text style={styles.avatarText}>
+            {user.name ? user.name.charAt(0).toUpperCase() : "U"}
+          </Text>
         </View>
         <View>
-          <Text style={styles.name}>Anisa</Text>
-          <Text style={styles.email}>anisa@email.com</Text>
+        <Text style={styles.name}>{user.name || "User"}</Text>
+        <Text style={styles.email}>{user.email}</Text>
         </View>
+
       </View>
 
       {/* ================= SETTINGS CARD ================= */}
@@ -180,10 +207,7 @@ const SettingsScreen: React.FC = () => {
           <Text style={styles.itemText}>Change Password</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.item}>
-          <Text style={styles.icon}>🌙</Text>
-          <Text style={styles.itemText}>Dark Mode</Text>
-        </TouchableOpacity>
+       
       </View>
 
       {/* ================= LOGOUT ================= */}
