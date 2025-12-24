@@ -221,7 +221,7 @@ const handleLogout = async () => {
         <Card
           title="Settings"
           icon="⚙️"
-          onPress={() => navigation.navigate('Settings' as never)}
+          onPress={() => navigation.navigate('CaregiverSettings' as never)}
         />
 
         <Card
@@ -241,7 +241,7 @@ export default CaregiverHomeScreen;
 const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
-    backgroundColor: '#F4F6F8',
+    backgroundColor: '#b1c9e1ff',
     alignItems: 'center',
     paddingVertical: 30,
   },

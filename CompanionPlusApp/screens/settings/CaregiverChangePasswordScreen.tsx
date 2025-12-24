@@ -1,107 +1,3 @@
-// import React, { useState } from "react";
-// import {
-//   View,
-//   Text,
-//   TextInput,
-//   TouchableOpacity,
-//   StyleSheet,
-//   Alert,
-// } from "react-native";
-// import AsyncStorage from "@react-native-async-storage/async-storage";
-// import api from "../../utils/api";
-// import { useNavigation } from "@react-navigation/native";
-
-// const ChangePasswordScreen = () => {
-//   const navigation = useNavigation();
-
-//   const [oldPassword, setOldPassword] = useState("");
-//   const [newPassword, setNewPassword] = useState("");
-
-//   const handleChangePassword = async () => {
-//     if (!oldPassword || !newPassword) {
-//       Alert.alert("Error", "Please fill all fields");
-//       return;
-//     }
-
-//     try {
-//       const token = await AsyncStorage.getItem("token");
-
-//       await api.put(
-//         "/auth/change-password",
-//         { oldPassword, newPassword },
-//         { headers: { Authorization: `Bearer ${token}` } }
-//       );
-
-//       Alert.alert("Success", "Password updated successfully");
-//       navigation.goBack();
-
-//     } catch (error: any) {
-//       Alert.alert(
-//         "Failed",
-//         error.response?.data?.message || "Something went wrong"
-//       );
-//     }
-//   };
-
-//   return (
-//     <View style={styles.container}>
-//       <Text style={styles.title}>Change Password</Text>
-
-//       <TextInput
-//         style={styles.input}
-//         placeholder="Old Password"
-//         secureTextEntry
-//         value={oldPassword}
-//         onChangeText={setOldPassword}
-//       />
-
-//       <TextInput
-//         style={styles.input}
-//         placeholder="New Password"
-//         secureTextEntry
-//         value={newPassword}
-//         onChangeText={setNewPassword}
-//       />
-
-//       <TouchableOpacity style={styles.button} onPress={handleChangePassword}>
-//         <Text style={styles.buttonText}>Update Password</Text>
-//       </TouchableOpacity>
-//     </View>
-//   );
-// };
-
-// export default ChangePasswordScreen;
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     padding: 20,
-//     backgroundColor: "#F3F4F6",
-//   },
-//   title: {
-//     fontSize: 24,
-//     fontWeight: "bold",
-//     marginBottom: 20,
-//   },
-//   input: {
-//     backgroundColor: "#fff",
-//     borderRadius: 10,
-//     padding: 14,
-//     marginBottom: 15,
-//   },
-//   button: {
-//     backgroundColor: "#4CAF50",
-//     padding: 14,
-//     borderRadius: 10,
-//     alignItems: "center",
-//   },
-//   buttonText: {
-//     color: "#fff",
-//     fontWeight: "bold",
-//   },
-// });
-
-
 
 import React, { useState } from "react";
 import {
@@ -116,7 +12,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import api from "../../utils/api";
 import { useNavigation } from "@react-navigation/native";
 
-const ChangePasswordScreen = () => {
+const CaregiverChangePasswordScreen = () => {
   const navigation = useNavigation();
 
   const [oldPassword, setOldPassword] = useState("");
@@ -134,7 +30,7 @@ const ChangePasswordScreen = () => {
       const token = await AsyncStorage.getItem("token");
 
       await api.put(
-        "/auth/change-password",
+        "/caregiver/change-password",
         { oldPassword, newPassword },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -202,7 +98,7 @@ const ChangePasswordScreen = () => {
   );
 };
 
-export default ChangePasswordScreen;
+export default CaregiverChangePasswordScreen;
 
 /* ================= STYLES ================= */
 const styles = StyleSheet.create({

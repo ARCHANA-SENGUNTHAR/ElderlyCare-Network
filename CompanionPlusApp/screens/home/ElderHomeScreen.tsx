@@ -227,6 +227,10 @@ const menuItems = [
   { label: 'Add Reminder', route: 'AddReminderScreen', icon: '⏰' },
   { label: 'Reminders', route: 'RemindersListScreen', icon: '📝' },
   { label: 'Settings', route: 'SettingsScreen', icon: '⚙️' },
+   { label: 'AIChat', route: 'AIChat', icon: '🤖' },
+   //{ label: 'VoiceChat', route: 'VoiceChat', icon: '🎤' },
+  
+  
 ];
 
 const ElderHomeScreen = () => {

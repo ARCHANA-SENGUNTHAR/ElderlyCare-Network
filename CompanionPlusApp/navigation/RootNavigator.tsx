@@ -353,6 +353,12 @@ import WellnessResourcesScreen from '../screens/wellness/WellnessResourcesScreen
 // Emergency
 import SOSButtonScreen from '../screens/emergency/SOSButtonScreen';
 
+//AI chat
+import AIChatScreen from '../screens/chat/AIChatScreen';
+import VoiceChatScreen from '../screens/chat/VoiceChatScreen';
+import EditCaregiverProfileScreen from '../screens/caregiver/EditCaregiverProfileScreen';
+import CaregiverSettingsScreen from '../screens/caregiver/CaregiverSettingsScreen';
+import CaregiverChangePasswordScreen from '../screens/settings/CaregiverChangePasswordScreen';
 /* ================= TYPES ================= */
 
 export type RootStackParamList = {
@@ -413,6 +419,13 @@ export type RootStackParamList = {
   ElderNotifications: undefined;
 
   SOSButton: undefined;
+
+  AIChat: undefined;
+  VoiceChat:undefined;
+  EditCaregiverProfile:undefined;
+  CaregiverSettings :  undefined;
+  CaregiverChangePassword : undefined;
+
 };
 
 const Stack = createStackNavigator<RootStackParamList>();
@@ -485,6 +498,18 @@ const RootNavigator: React.FC = () => {
         <Stack.Screen name="ElderNotifications" component={ElderNotificationsScreen} />
 
         <Stack.Screen name="SOSButton" component={SOSButtonScreen} />
+        <Stack.Screen name="AIChat" component={AIChatScreen} />
+        
+         <Stack.Screen name="VoiceChat" component={VoiceChatScreen} />
+
+          <Stack.Screen
+  name="EditCaregiverProfile"
+  component={EditCaregiverProfileScreen}
+  options={{ title: 'Edit Profile' }}
+/>
+
+ <Stack.Screen name="CaregiverSettings" component={CaregiverSettingsScreen} />
+ <Stack.Screen name="CaregiverChangePassword" component={CaregiverChangePasswordScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

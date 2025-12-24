@@ -112,6 +112,8 @@ app.use("/api/health", require("./routes/healthRoutes"));
 app.use("/api/events", require("./routes/eventRoutes"));
 app.use("/api/messages", require("./routes/messageRoutes"));
 app.use("/api/reminders", require("./routes/reminderRoutes"));
+app.use("/api/ai", require("./routes/aiRoutes"));
+app.use("/api/speech", require("./routes/speechRoutes"));
 
 
 /* ===================== HEALTH CHECK ===================== */

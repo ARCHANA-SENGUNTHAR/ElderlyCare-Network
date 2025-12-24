@@ -6,5 +6,5 @@ const { register, login,changePassword } = require('../controllers/authControlle
 
 router.post('/register', register);
 router.post('/login', login);
-router.put('/change-password', auth, changePassword);
+router.put('/change-password', auth, changePassword); //for elder can change password
 module.exports = router;   // ✅ FIXED — export router ONLY

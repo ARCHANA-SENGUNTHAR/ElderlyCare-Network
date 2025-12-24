@@ -121,10 +121,10 @@ const CaregiverNotificationsScreen = () => {
           >
             <Text style={styles.actionText}>Accept</Text>
           </TouchableOpacity>
-
+{/* 
           <TouchableOpacity style={styles.rejectBtn}>
             <Text style={styles.actionText}>Reject</Text>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
         </View>
       )}
     </View>
@@ -162,7 +162,7 @@ export default CaregiverNotificationsScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F1F5F9',
+    backgroundColor: '#b1c9e1ff',
     padding: 16,
   },
 

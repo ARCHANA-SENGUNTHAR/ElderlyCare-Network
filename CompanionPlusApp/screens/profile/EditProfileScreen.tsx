@@ -332,7 +332,7 @@ const EditProfileScreen = () => {
 
         {/* HEADER */}
         <View style={styles.header}>
-          <Text style={styles.headerText}>Edit your Profile</Text>
+          <Text style={styles.headerText}>Edit Your Profile</Text>
           <TouchableOpacity onPress={() => navigation.goBack()}>
             <Text style={styles.close}>✕</Text>
           </TouchableOpacity>
@@ -342,7 +342,7 @@ const EditProfileScreen = () => {
         <ScrollView contentContainerStyle={styles.body}>
 
           {/* LEFT SIDE PHOTO */}
-          <View style={styles.leftPanel}>
+          {/* <View style={styles.leftPanel}>
             <Text style={styles.photoLabel}>Photo:</Text>
 
             <View style={styles.avatar}>
@@ -354,7 +354,7 @@ const EditProfileScreen = () => {
             <TouchableOpacity style={styles.photoButton}>
               <Text style={styles.photoButtonText}>CHANGE PHOTO</Text>
             </TouchableOpacity>
-          </View>
+          </View> */}
 
           {/* RIGHT PANEL */}
           <View style={styles.rightPanel}>
@@ -448,7 +448,7 @@ export default EditProfileScreen;
 const styles = StyleSheet.create({
   overlay: {
     flex: 1,
-    backgroundColor: '#00000055',
+    backgroundColor: '#b1c9e1ff',
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -462,7 +462,7 @@ const styles = StyleSheet.create({
   },
 
   header: {
-    backgroundColor: '#4CAF50',
+    backgroundColor: '#79acd8ff',
     padding: 14,
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -558,7 +558,7 @@ const styles = StyleSheet.create({
   },
 
   cancelBtn: {
-    backgroundColor: '#97ec91ff',
+    backgroundColor: '#acc5deff',
     paddingVertical: 8,
     paddingHorizontal: 20,
     borderRadius: 4,
@@ -566,7 +566,7 @@ const styles = StyleSheet.create({
   },
 
   saveBtn: {
-    backgroundColor: '#4CAF50',
+    backgroundColor: '#699eccff',
     paddingVertical: 8,
     paddingHorizontal: 22,
     borderRadius: 4,

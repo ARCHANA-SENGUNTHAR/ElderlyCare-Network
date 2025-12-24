@@ -59,6 +59,8 @@ const updateRelationProfile = async (req, res) => {
   }
 };
 
+
+
 module.exports = {
   getElderProfile,
   getRelationProfile,

@@ -7,6 +7,8 @@
     "frontend": "cd CompanionPlusApp && npx expo start"
   },
   "dependencies": {
+    "@clerk/clerk-expo": "^2.19.14",
+    "@google/generative-ai": "^0.24.1",
     "axios": "^1.13.2"
   },
   "devDependencies": {

@@ -47,6 +47,8 @@ const {
   getAllCaregivers,
   getCaregiverById,
   getMyProfile,
+  updateMyProfile,
+  changeCaregiverPassword
 } = require("../controllers/caregiverController");
 
 // Register caregiver
@@ -57,6 +59,7 @@ router.post("/login", loginCaregiver);
 
 // Logged-in caregiver profile  ✅ MOVE THIS UP
 router.get("/me", auth, getMyProfile);
+router.put("/me", auth, updateMyProfile); 
 
 // Search caregivers
 router.get("/search", searchCaregivers);
@@ -66,5 +69,11 @@ router.get("/", getAllCaregivers);
 
 // Get caregiver by ID (KEEP THIS LAST) ✅
 router.get("/:id", getCaregiverById);
+
+router.put(
+  "/change-password",
+  auth,
+  changeCaregiverPassword
+);
 
 module.exports = router;

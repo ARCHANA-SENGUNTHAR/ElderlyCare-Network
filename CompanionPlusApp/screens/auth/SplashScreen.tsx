@@ -111,7 +111,7 @@ const SplashScreen = () => {
   return (
     <View style={styles.container}>
       <Image
-        source={require('../../assets/logo.png')}
+        source={require('../../assets/favicon.png')}
         style={styles.logo}
       />
       <Text style={styles.title}>Welcome to Companion+</Text>
