@@ -1,5 +1,5 @@
 // App.tsx ✅ RootNavigator already includes NavigationContainer
-//import './index.css';
+import './index.css';
 import React from 'react';
 import RootNavigator from './navigation/RootNavigator';
 import { ThemeProvider } from './context/ThemeContext';
