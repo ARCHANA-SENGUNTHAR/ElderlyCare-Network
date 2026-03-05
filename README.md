@@ -6,9 +6,11 @@ A secure and user-friendly digital companion for elderly care management, commun
 
 🌐 Website: 👉[Live Here](https://companionplus.netlify.app)
 
+---
 
 ## 📁 Project Structure
-```
+
+```bash
 ElderlyCare-Network/
 │
 ├── CompanionPlusApp/                 # Frontend (React Native + Expo Web)
@@ -34,56 +36,67 @@ ElderlyCare-Network/
 └── README.md                        # Project documentation
 
 ```
+
+---
+
 ## ⚙️ Installation & Setup
 
 ## 🔹*Frontend Setup*
 
 ### Clone the repository:
 
-```
+```bash
 git clone https://github.com/Anisa-barvin/ElderlyCare-Network.git
 ```
 
 ### Navigate to frontend:
 
+```bash
 cd ElderlyCare-Network/CompanionPlusApp
-
+```
 
 ### Install dependencies:
-```
+
+```bash
 npm install
 ```
 
-Run locally:
-```
+* Run locally:
+  
+```bash
 npx expo start
 ```
 
 ### Build for web:
-```
+
+```bash
 npx expo export -p web
 ```
+
+---
 
 ## 🔹*Backend Setup*
 
 Navigate to backend:
-```
+```bash
 cd ElderlyCare-Network/Companionplus-backend
 ```
 
 Install dependencies:
-```
+```bash
 npm install
 ```
 
 Start server:
-```
+```bash
 node server.js
-```
+
+```bash
+
 ## 🔐 Environment Variables (Backend)
 
+```bash
 Set these in Render Dashboard → Environment Variables:
-```
 MONGO_URI=YOUR_MONGODB_URL
 JWT_SECRET=YOUR_JWT_SECRET_KEY
 GROQ_API_KEY=YOUR_GROQ_API_KEY_KEY
@@ -147,7 +160,7 @@ BREVO_API_KEY=YOUR_BREVO_API_KEY
 
 ## 🔮 Future Enhancements
 
-- Emergency alert system 🚨
+- Emergency alert system 
 
 - Appointment scheduling with doctors
 
@@ -161,16 +174,10 @@ BREVO_API_KEY=YOUR_BREVO_API_KEY
 
 ---
 
-## 🙌 Acknowledgements
-
-This project is inspired by the need for accessible, reliable, and compassionate elderly care solutions in today’s fast-paced digital world.
-
----
-
 ## GUIDANCE:
 
 ## Dr. S. Prakash
-## *Head of Department-Information Technology,Sri Shakthi Institute of Engineering and Technology-Coimbatore*
+#### *Head of Department-Information Technology,Sri Shakthi Institute of Engineering and Technology-Coimbatore*
 
 *I would like to thank our guide for his support throughout the development of this project, that we can finally bring our webiste live. It was very crucial time period where we came across many 
 knowledgable insights.
