@@ -61,7 +61,7 @@ cd ElderlyCare-Network/CompanionPlusApp
 npm install
 ```
 
-* Run locally:
+Run locally:
   
 ```bash
 npx expo start
@@ -77,21 +77,20 @@ npx expo export -p web
 
 ## 🔹*Backend Setup*
 
-Navigate to backend:
+- Navigate to backend:
+ ```bash
+ cd ElderlyCare-Network/Companionplus-backend
+ ```
+
+- Install dependencies:
+ ```bash
+ npm install
+ ```
+
+- Start server:
 ```bash
-cd ElderlyCare-Network/Companionplus-backend
+  node server.js
 ```
-
-Install dependencies:
-```bash
-npm install
-```
-
-Start server:
-```bash
-node server.js
-
-```bash
 
 ## 🔐 Environment Variables (Backend)
 
@@ -189,27 +188,27 @@ Thank you sir!*
 
 ## Anisa Barvin
 
-📧 Email: barvinanisa@gmail.com
+📧 [Email](barvinanisa@gmail.com)
 
-🔗 GitHub: https://github.com/Anisa-barvin
+🔗 [GitHub](https://github.com/Anisa-barvin)
 
 ## Anika V
 
-📧 Email: anikavadivel@gmail.com
+📧 [Email](anikavadivel@gmail.com)
 
-🔗 GitHub: https://github.com/Anika02023
+🔗 [GitHub](https://github.com/Anika02023)
 
 ## Archana gurusamy
 
-📧 Email: archanagurusamy648@gmail.com
+📧 [Email](archanagurusamy648@gmail.com)
 
-🔗 GitHub: https://github.com/ARCHANA-SENGUNTHAR
+🔗 [GitHub](https://github.com/ARCHANA-SENGUNTHAR)
 
 ## Hemalatha P N
 
-📧 Email: hemalathanatarajan28@gmail.com
+📧 [Email](hemalathanatarajan28@gmail.com)
 
-🔗 GitHub: https://github.com/hemalatha2005
+🔗 [GitHub](https://github.com/hemalatha2005)
 
 ---
 
